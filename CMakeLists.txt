@@ -40,7 +40,7 @@ include_directories(Glitter/Headers/
 file(GLOB VENDORS_SOURCES Glitter/Vendor/glad/src/glad.c)
 file(GLOB PROJECT_HEADERS Glitter/Headers/*.hpp
                           Glitter/Headers/*.h)
-file(GLOB PROJECT_SOURCES Glitter/Sources/backpack.cpp)
+file(GLOB PROJECT_SOURCES Glitter/Sources/advanced_opengl_main.cpp)
 file(GLOB PROJECT_SHADERS Glitter/Shaders/*.comp
                           Glitter/Shaders/*.frag
                           Glitter/Shaders/*.geom

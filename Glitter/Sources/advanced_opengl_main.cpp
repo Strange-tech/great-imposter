@@ -307,49 +307,50 @@ int main(int argc, char * argv[]) {
     glEnable(GL_DEPTH_TEST); // enable depth test
 
     // vertex
-    float cubeVertices[] = {
-       -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-         0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-         0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-         0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+    // float cubeVertices[] = {
+    //     // positions          // texture Coords
+    //     -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+    //      0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+    //      0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    //      0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    //     -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+    //     -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 
-        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-         0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+    //     -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    //      0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    //      0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+    //      0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+    //     -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+    //     -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
 
-        -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
-        -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+    //     -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    //     -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    //     -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    //     -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    //     -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    //     -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
 
-         0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+    //      0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    //      0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    //      0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    //      0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    //      0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    //      0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
 
-        -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-         0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
-         0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-         0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+    //     -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    //      0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+    //      0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    //      0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    //     -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    //     -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
 
-        -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-         0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-         0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
-    };
+    //     -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+    //      0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    //      0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    //      0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    //     -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+    //     -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+    // };
     // float planeVertices[] = {
     //     // positions          // texture Coords 
     //      5.0f, -0.5f,  5.0f,  2.0f, 0.0f,
@@ -415,18 +416,22 @@ int main(int argc, char * argv[]) {
          1.0f, -1.0f,  1.0f
     };
 
+    float points[] = {
+        0.0f,  0.0f
+    };
+
     // ----------------------------- 正方体 ----------------------------- //
-    unsigned int cubeVAO, cubeVBO;
-    glGenVertexArrays(1, &cubeVAO);
-    glGenBuffers(1, &cubeVBO);    
-    glBindVertexArray(cubeVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glBindVertexArray(0);
+    // unsigned int cubeVAO, cubeVBO;
+    // glGenVertexArrays(1, &cubeVAO);
+    // glGenBuffers(1, &cubeVBO);    
+    // glBindVertexArray(cubeVAO);
+    // glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
+    // glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
+    // glEnableVertexAttribArray(0);
+    // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    // glEnableVertexAttribArray(1);
+    // glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    // glBindVertexArray(0);
 
     // ----------------------------- 天空盒 ----------------------------- //
     unsigned int skyboxVAO, skyboxVBO;
@@ -465,36 +470,51 @@ int main(int argc, char * argv[]) {
     // glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
     // glBindVertexArray(0);
 
+    // ----------------------------- billboard VAO ----------------------------- //
+    unsigned int VBO, VAO;
+    glGenBuffers(1, &VBO);
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(points), &points, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), 0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
+    glBindVertexArray(0);
 
     // load textures
     std::vector<std::string> faces {
-        "/Users/luziang/Desktop/Glitter/Glitter/Sources/skybox/right.jpg",
-        "/Users/luziang/Desktop/Glitter/Glitter/Sources/skybox/left.jpg",
-        "/Users/luziang/Desktop/Glitter/Glitter/Sources/skybox/top.jpg",
-        "/Users/luziang/Desktop/Glitter/Glitter/Sources/skybox/bottom.jpg",
-        "/Users/luziang/Desktop/Glitter/Glitter/Sources/skybox/front.jpg",
-        "/Users/luziang/Desktop/Glitter/Glitter/Sources/skybox/back.jpg"
+        "/home/luziang/桌面/great-imposter/Glitter/Sources/skybox/right.jpg",
+        "/home/luziang/桌面/great-imposter/Glitter/Sources/skybox/left.jpg",
+        "/home/luziang/桌面/great-imposter/Glitter/Sources/skybox/top.jpg",
+        "/home/luziang/桌面/great-imposter/Glitter/Sources/skybox/bottom.jpg",
+        "/home/luziang/桌面/great-imposter/Glitter/Sources/skybox/front.jpg",
+        "/home/luziang/桌面/great-imposter/Glitter/Sources/skybox/back.jpg"
     };
     unsigned int cubemapTexture = loadCubemap(faces); 
-    unsigned int cubeTexture  = loadTexture("/Users/luziang/Desktop/Glitter/Glitter/Sources/container.png");
-    // unsigned int floorTexture = loadTexture("/Users/luziang/Desktop/Glitter/Glitter/Sources/metal.png");
+    // unsigned int cubeTexture  = loadTexture("/home/luziang/桌面/great-imposter/Glitter/Sources/container.png");
+    // unsigned int floorTexture = loadTexture("/home/luziang/桌面/great-imposter/Glitter/Sources/metal.png");
 
-    Shader shader("/Users/luziang/Desktop/Glitter/Glitter/Shaders/cube.vert", 
-        "/Users/luziang/Desktop/Glitter/Glitter/Shaders/cube.frag");
-    Shader skyboxShader("/Users/luziang/Desktop/Glitter/Glitter/Shaders/skybox.vert", 
-        "/Users/luziang/Desktop/Glitter/Glitter/Shaders/skybox.frag");
-    // Shader screenShader("/Users/luziang/Desktop/Glitter/Glitter/Shaders/framebuffers_screen.vert", 
-    //     "/Users/luziang/Desktop/Glitter/Glitter/Shaders/framebuffers_screen.frag");
+    // Shader shader("/home/luziang/桌面/great-imposter/Glitter/Shaders/framebuffer.vert", 
+    //     "/home/luziang/桌面/great-imposter/Glitter/Shaders/framebuffer.frag");
+    Shader skyboxShader("/home/luziang/桌面/great-imposter/Glitter/Shaders/skybox.vert", 
+        "/home/luziang/桌面/great-imposter/Glitter/Shaders/skybox.frag");
+    // Shader screenShader("/home/luziang/桌面/great-imposter/Glitter/Shaders/framebuffers_screen.vert", 
+    //     "/home/luziang/桌面/great-imposter/Glitter/Shaders/framebuffers_screen.frag");
+    Shader shader("/home/luziang/桌面/great-imposter/Glitter/Shaders/geometry_shader.vert",
+                    "/home/luziang/桌面/great-imposter/Glitter/Shaders/geometry_shader.frag",
+                    "/home/luziang/桌面/great-imposter/Glitter/Shaders/geometry_shader.geom");
 
     // activate shader
-    shader.use();
-    shader.setInt("skybox", 0);
     skyboxShader.use();
     skyboxShader.setInt("skybox", 0);
+    shader.use();
+    // shader.setInt("texture1", 0);
     // screenShader.use();
     // screenShader.setInt("screenTexture", 0);
 
-    // framebuffer configuration
+    // // framebuffer configuration
     // unsigned int framebuffer;
     // glGenFramebuffers(1, &framebuffer);
     // glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
@@ -533,7 +553,7 @@ int main(int argc, char * argv[]) {
         // glEnable(GL_DEPTH_TEST); // enable depth testing (is disabled for rendering screen-space quad)
 
         // Background Fill Color
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // set uniforms
@@ -551,34 +571,37 @@ int main(int argc, char * argv[]) {
         glDepthMask(GL_TRUE);
 
         shader.use();
+        glBindVertexArray(VAO);
+        glDrawArrays(GL_POINTS, 0, 4);
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
         shader.setVec3("cameraPos", camera.Position);
 
-        // floor
+        // // floor
         // glBindVertexArray(planeVAO);
         // glBindTexture(GL_TEXTURE_2D, floorTexture);
         // shader.setMat4("model", glm::mat4(1.0f));
         // glDrawArrays(GL_TRIANGLES, 0, 6);
         // glBindVertexArray(0);
 
-        // cubes
-        glBindVertexArray(cubeVAO);
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, cubeTexture);
-        model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
-        shader.setMat4("model", model);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
-        shader.setMat4("model", model);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        // // cubes
+        // glBindVertexArray(cubeVAO);
+        // glActiveTexture(GL_TEXTURE0);
+        // glBindTexture(GL_TEXTURE_2D, cubeTexture);
+        // model = glm::translate(model, glm::vec3(-1.0f, 0.0f, -1.0f));
+        // shader.setMat4("model", model);
+        // glDrawArrays(GL_TRIANGLES, 0, 36);
+        // model = glm::mat4(1.0f);
+        // model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
+        // shader.setMat4("model", model);
+        // glDrawArrays(GL_TRIANGLES, 0, 36);
 
-        // bind back to default framebuffer
+        // // bind back to default framebuffer
         // glBindFramebuffer(GL_FRAMEBUFFER, 0);
         // glDisable(GL_DEPTH_TEST);
         // glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color to white (not really necessary actually, since we won't be able to see behind the quad anyways)
         // glClear(GL_COLOR_BUFFER_BIT);
+
         // screenShader.use();
         // glBindVertexArray(quadVAO);
         // glBindTexture(GL_TEXTURE_2D, textureColorbuffer);
@@ -590,10 +613,12 @@ int main(int argc, char * argv[]) {
     }   
     
     // optional: de-allocate all resources once they've outlived their purpose
-    glDeleteVertexArrays(1, &cubeVAO);
+    // glDeleteVertexArrays(1, &cubeVAO);
     glDeleteVertexArrays(1, &skyboxVAO);
-    glDeleteBuffers(1, &cubeVBO);
+    // glDeleteBuffers(1, &cubeVBO);
     glDeleteBuffers(1, &skyboxVBO);
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
 
     glfwTerminate();
     return 0;

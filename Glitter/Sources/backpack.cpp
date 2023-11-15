@@ -68,11 +68,11 @@ int main(int argc, char * argv[]) {
 
     stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis
     
-    Shader ourShader("/Users/luziang/Desktop/Glitter/Glitter/Shaders/model_loading.vert", 
-        "/Users/luziang/Desktop/Glitter/Glitter/Shaders/model_loading.frag");
+    Shader ourShader("/home/luziang/桌面/great-imposter/Glitter/Shaders/model_loading.vert", 
+        "/home/luziang/桌面/great-imposter/Glitter/Shaders/model_loading.frag");
     ourShader.use();
 
-    Model ourModel("/Users/luziang/Desktop/Glitter/Glitter/Sources/backpack/backpack.obj");
+    Model ourModel("/home/luziang/桌面/great-imposter/Glitter/Sources/backpack/backpack.obj");
 
     Box boundingbox = ourModel.getBoundingBox();
     // std::cout << boundingbox.min.x <<' '<< boundingbox.min.y <<' '<< boundingbox.min.z << '\n';
@@ -158,27 +158,28 @@ int main(int argc, char * argv[]) {
         // cv::imwrite(path, img);
 
         // save image
-        int mac_width = mWidth*2, mac_height = mHeight*2;
+        
+        // int mac_width = mWidth*2, mac_height = mHeight*2;
         GLubyte* pPixelData;
-        pPixelData = (GLubyte*)malloc(mac_width * mac_height * 4); // 分配内存
+        pPixelData = (GLubyte*)malloc(mWidth * mHeight * 4); // 分配内存
         if (pPixelData == 0)
             return 0;
         glReadBuffer(GL_FRONT); // 保存窗口渲染的结果
         glPixelStorei(GL_UNPACK_ALIGNMENT, 4); // 解压窗口数据结构
-        glReadPixels(0, 0, mac_width, mac_height, GL_RGBA, GL_UNSIGNED_BYTE, pPixelData); // 存储像素数据
+        glReadPixels(0, 0, mWidth, mHeight, GL_RGBA, GL_UNSIGNED_BYTE, pPixelData); // 存储像素数据
  
         cv::Mat img;
         std::vector<cv::Mat> imgPlanes;
-        img.create(mac_height, mac_width, CV_8UC3); // 确定图片通道和尺寸
+        img.create(mHeight, mWidth, CV_8UC3); // 确定图片通道和尺寸
         cv::split(img, imgPlanes); // 将图像按照通道数拆分，三个单通道序列
  
-        for(int i = 0; i < mac_height; i ++) {
+        for(int i = 0; i < mHeight; i ++) {
             unsigned char* plane0Ptr = imgPlanes[0].ptr<unsigned char>(i); //B
             unsigned char* plane1Ptr = imgPlanes[1].ptr<unsigned char>(i); //G
             unsigned char* plane2Ptr = imgPlanes[2].ptr<unsigned char>(i); //R
             // opencv里面以BGR存储的，所以需要改变顺序保存
-            for(int j = 0; j < mac_width; j ++) {
-                int k = 4 * (i * mac_width + j); // RGBA数据结构，不需要A，跳过，所以步长乘以4
+            for(int j = 0; j < mWidth; j ++) {
+                int k = 4 * (i * mWidth + j); // RGBA数据结构，不需要A，跳过，所以步长乘以4
                 plane2Ptr[j] = pPixelData[k];
                 plane1Ptr[j] = pPixelData[k+1];
                 plane0Ptr[j] = pPixelData[k+2];

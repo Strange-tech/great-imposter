@@ -172,8 +172,8 @@ int main(int argc, char * argv[]) {
     // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW); 
     
     /* 4. load texture */
-    unsigned int diffuseMap = loadTexture("/Users/luziang/Desktop/Glitter/Glitter/Sources/container.png");
-    unsigned int specularMap = loadTexture("/Users/luziang/Desktop/Glitter/Glitter/Sources/container_specular.png");
+    unsigned int diffuseMap = loadTexture("/home/luziang/桌面/great-imposter/Glitter/Sources/container.png");
+    unsigned int specularMap = loadTexture("/home/luziang/桌面/great-imposter/Glitter/Sources/container_specular.png");
     // unsigned int emissionMap = loadTexture("/Users/luziang/Desktop/Glitter/Glitter/Sources/matrix.jpg");
     
     /* 5. set the vertex attributes pointers */
@@ -194,10 +194,10 @@ int main(int argc, char * argv[]) {
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    Shader ourShader("/Users/luziang/Desktop/Glitter/Glitter/Shaders/shader.vert", 
-        "/Users/luziang/Desktop/Glitter/Glitter/Shaders/shader.frag");
-    Shader lightShader("/Users/luziang/Desktop/Glitter/Glitter/Shaders/light_shader.vert", 
-        "/Users/luziang/Desktop/Glitter/Glitter/Shaders/light_shader.frag");
+    Shader ourShader("/home/luziang/桌面/great-imposter/Glitter/Shaders/shader.vert", 
+        "/home/luziang/桌面/great-imposter/Glitter/Shaders/shader.frag");
+    Shader lightShader("/home/luziang/桌面/great-imposter/Glitter/Shaders/light_shader.vert", 
+        "/home/luziang/桌面/great-imposter/Glitter/Shaders/light_shader.frag");
 
     // activate shader
     ourShader.use();
